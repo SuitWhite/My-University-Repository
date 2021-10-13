@@ -26,8 +26,6 @@ def count1(n,m):
         return 1
     return count
 
-count = 0
-
 if __name__ == '__main__':
     while True:
         print("Введіть розмір конструкції:")
