@@ -1,5 +1,6 @@
 from random import choices
 
+
 def menu():
     while True:
         try:
@@ -30,36 +31,38 @@ def input_number():
             print("Value should be int")
             continue
 
+
 def matrix_init():
     print("Enter size")
     a = []
-    N = input_number()
-    for i in range(N):
-        a.append([0]*N)
-    for i in range(N):
-        for j in range(N):
+    n = input_number()
+    for i in range(n):
+        a.append([0] * n)
+    for i in range(n):
+        for j in range(n):
             a[i][j] = input_number()
     return a
 
 
 def generate_matrix():
     print("Enter size, a and b:")
-    N = input_number()
+    n = input_number()
     matrix = []
     a = input_number()
     b = input_number()
-    for i in range(N):
-        m = choices(range(a, b), k=N)
+    for i in range(n):
+        m = choices(range(a, b), k=n)
         matrix.append(m)
 
     return matrix
+
 
 def show_matrix(matrix, size_of_matrix):
     for i in range(size_of_matrix):
         ryadok = ""
         for j in range(size_of_matrix):
-            ryadok+=str(matrix[i][j])
-            ryadok+=" "
+            ryadok += str(matrix[i][j])
+            ryadok += " "
         print(ryadok)
 
 
@@ -71,7 +74,6 @@ def start(matrix):
     sort_matrix(matrix, key)
     print('Matrix after sorting:')
     show_matrix(matrix, size)
-
 
 
 def sort_matrix(matrix, key):
@@ -124,11 +126,15 @@ def binary_search(arr, low, high, x):
         return -1
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
+def main():
     while True:
         matrix = menu()
         if start(matrix) is False:
             print("Element is not found")
         else:
             print("Element is found")
+
+
+# Press the green button in the gutter to run the script.
+if __name__ == '__main__':
+    main()
