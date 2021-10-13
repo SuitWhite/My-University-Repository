@@ -1,12 +1,4 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
 from random import choices
-
-from math import sqrt
 
 def menu():
     while True:
@@ -18,7 +10,7 @@ def menu():
                 print('програма завершила свою роботу')
                 exit()
             elif n == "1":
-                return input_number()
+                return matrix_init()
             elif n == "2":
                 return generate_matrix()
             else:
@@ -140,5 +132,3 @@ if __name__ == '__main__':
             print("Element is not found")
         else:
             print("Element is found")
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
