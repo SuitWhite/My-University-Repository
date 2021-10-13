@@ -1,20 +1,36 @@
-def fac(n):
-    if (n == 0 or n<1):
-        return 1
-    return fac(n-1) * n
 
 class MyException(Exception): pass
-while True:
+
+
+def input_positive_number():
+    while True:
         try:
-            print("Enter k:")
-            k = int(input())
-            if k<=0:
+            n = int(input())
+            if n <= 0:
                 raise MyException
-            result = fac(k//10)*fac(k%10)
-            print("For k you have ", result, "variants")
+            return n
         except MyException:
-            print("k<1")
+            print("N<1")
             continue
         except ValueError:
             print("Value should be int")
             continue
+
+def count1(n,m):
+    count = 0
+    if (m>0 and n-1>=0):
+        count += count1(n - 1, m - 1)
+    if (n-10>=0):
+        count+= count1(n-10,3)
+    if (n==0):
+        return 1
+    return count
+
+count = 0
+
+if __name__ == '__main__':
+    while True:
+        print("Введіть розмір конструкції:")
+        size = input_positive_number()
+        count = count1(size,3)
+        print(f'Результат: {count}' )
