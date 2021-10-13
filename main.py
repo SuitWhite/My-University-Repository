@@ -27,6 +27,11 @@ def count1(n, m):
         return 1
     return count
 
+def Exit():
+    print("Вийти з програми? (y,n):")
+    ch = input()
+    if (ch=='y'):
+        exit()
 
 def main():
     while True:
@@ -34,6 +39,7 @@ def main():
         size = input_positive_number()
         count = count1(size, 3)
         print(f'Результат: {count}')
+        Exit()
 
 
 if __name__ == '__main__':
